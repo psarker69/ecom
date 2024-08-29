@@ -26,17 +26,15 @@
 
       <main>
         <div class="container">
-
             @yield('admin_content')
-
-
         </div>
       </main>
 
         @include('backend.layouts.inc.footer')
+
     </div>
 
     @include('backend.layouts.inc.script')
 
-  </body>
+</body>
 </html>
