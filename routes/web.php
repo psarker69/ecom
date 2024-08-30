@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('frontend.pages.home');
 });
 
@@ -35,6 +36,8 @@ Route::prefix('admin/')->group(function() {
     Route::middleware(['auth'])->group(function(){
 
         Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+
+        Route::resource('category', CategoryController::class);
 });
 
 

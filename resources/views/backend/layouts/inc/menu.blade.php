@@ -2,7 +2,7 @@
           <div class="menu-container flex-grow-1">
             <ul id="menu" class="menu">
               <li>
-                <a href="Dashboard.html">
+                <a href="{{ route('admin.dashboard') }}">
                   <i data-cs-icon="shop" class="icon" data-cs-size="18"></i>
                   <span class="label">Dashboard</span>
                 </a>
