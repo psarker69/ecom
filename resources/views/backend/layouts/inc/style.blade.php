@@ -33,9 +33,11 @@
 <!-- Vendor Styles End -->
 <!-- Template Base Styles Start -->
 <link rel="stylesheet" href="{{asset('assets/backend')}}/css/styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 <!-- Template Base Styles End -->
 
 <link rel="stylesheet" href="{{asset('assets/backend')}}/css/main.css" />
 <script src="{{ asset('assets/backend')}}/js/base/loader.js"></script>
+
 
 @stack('admin_style')

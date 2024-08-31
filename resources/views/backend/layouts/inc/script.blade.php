@@ -19,6 +19,8 @@
     <script src="{{ asset('assets/backend')}}/js/pages/dashboard.js"></script>
     <script src="{{ asset('assets/backend')}}/js/common.js"></script>
     <script src="{{ asset('assets/backend')}}/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
     <!-- Page Specific Scripts End -->
 
     @stack('admin_script')
