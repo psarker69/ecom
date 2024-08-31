@@ -8,6 +8,24 @@
                 </a>
               </li>
               <li>
+                <a href="#categories" data-href="{{asset(route('category.index'))}}">
+                  <i data-cs-icon="cupcake" class="icon" data-cs-size="18"></i>
+                  <span class="label">Categories</span>
+                </a>
+                <ul id="categories">
+                  <li>
+                    <a href="{{asset(route('category.index'))}}">
+                      <span class="label">List</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{asset(route('category.create'))}}">
+                      <span class="label">Add New</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
                 <a href="#products" data-href="Products.html">
                   <i data-cs-icon="cupcake" class="icon" data-cs-size="18"></i>
                   <span class="label">Products</span>
