@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,12 @@ class TestimonialFactory extends Factory
      */
     public function definition(): array
     {
+
+        $client_name = $this->faker->name;
+
         return [
-            'client_name'=>$this->faker->name,
+            'client_name'=>$client_name,
+            'client_name_slug'=>Str::slug($client_name),
             'client_designation'=>$this->faker->jobTitle . '-' . $this->faker->company,
             'client_message'=>$this->faker->paragraph(),
         ];

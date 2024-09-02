@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
             $table->string('client_name');
+            $table->string('client_name_slug');
             $table->string('client_designation');
             $table->longText('client_message');
             $table->string('client_image')->nullable()->default('default-client.jpg');
