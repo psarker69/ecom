@@ -16,7 +16,7 @@
 
     @include('frontend.pages.widgets.latest-product')
 
-    @include('frontend.pages.widgets.testmonial')
+    @include('frontend.pages.widgets.testimonial')
 
 @endsection
 
