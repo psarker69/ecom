@@ -24,6 +24,7 @@ class CategoryUpdateRequest extends FormRequest
 
         return [
             'title' => 'required|string|max:255',
+            'category_image' => 'nullable|image'
         ];
     }
 }

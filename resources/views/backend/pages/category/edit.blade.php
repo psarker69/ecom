@@ -38,7 +38,7 @@
 
                     <div class="mb-3">
                         <label for="category-image" class="form-label">Category Image</label>
-                        <input type="file" class="form-control dropify" name="category_image" data-default-file="{{ asset('uploads/category') }}/{{ $category->category_image }}">
+                        <input type="file" class="form-control dropify" name="category_image" data-default-file="{{ asset('uploads/categories') }}/{{ $category->category_image }}">
                         @error('category_image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

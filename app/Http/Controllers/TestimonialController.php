@@ -78,6 +78,7 @@ class TestimonialController extends Controller
         'client_name_slug' => Str::slug($request->client_name),
         'client_designation' => $request->client_designation,
         'client_message' => $request->client_message,
+        'is_active' => $request->filled('is_active')
        ]);
 
        $this->image_upload($request, $testimonial->id);
