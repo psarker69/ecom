@@ -10,6 +10,7 @@ use Yoeunes\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
+use App\Models\ProductImage;
 
 class ProductController extends Controller
 {
@@ -55,6 +56,7 @@ class ProductController extends Controller
         ]);
 
         $this->image_upload($request, $product->id);
+        $this->multiple_image_upload($request, $product->id);
 
         Toastr::success('Data Store Success');
         return redirect()->route('products.index');
@@ -147,4 +149,27 @@ class ProductController extends Controller
         }
 
     }
+
+    public function multiple_image_upload($request, $product_id)
+    {
+        if($request->file('product_multiple_image')) {
+            $flag = 1;
+
+            foreach($request->file('product_multiple_image') as $single_image) {
+                $photo_location = 'public/uploads/products/';
+                $new_photo_name = $product_id . '-' .$flag . $single_image->getClientOriginalExtension();
+                $new_photo_location = $photo_location.$new_photo_name;
+
+                Image::make($single_image)->resize(600,622)->save(base_path($new_photo_location), 40);
+
+                ProductImage::create([
+                    'product_id' => $product_id,
+                    'image_name' =>$new_photo_name,
+                ]);
+
+                $flag++;
+            }
+        }
+    }
+
 }

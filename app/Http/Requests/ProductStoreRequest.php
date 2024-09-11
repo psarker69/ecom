@@ -31,7 +31,8 @@ class ProductStoreRequest extends FormRequest
             'short_description'=>'nullable|string',
             'long_description'=>'nullable|string',
             'additional_info'=>'nullable|string',
-            'product_image'=>'required|image|max:1024'
+            'product_image'=>'required|image|max:1024',
+            'product_multiple_image'=>'nullable|image|max:1024'
         ];
     }
 }
