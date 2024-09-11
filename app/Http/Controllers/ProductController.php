@@ -42,6 +42,7 @@ class ProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
+        
         $product = Product::create([
             'category_id'=>$request->category_id,
             'product_name'=>$request->product_name,
@@ -56,7 +57,7 @@ class ProductController extends Controller
         ]);
 
         $this->image_upload($request, $product->id);
-        $this->multiple_image_upload($request, $product->id);
+        // $this->multiple_image_upload($request, $product->id);
 
         Toastr::success('Data Store Success');
         return redirect()->route('products.index');
@@ -103,6 +104,7 @@ class ProductController extends Controller
         ]);
 
         $this->image_upload($request, $product->id);
+        // $this->multiple_image_upload($request, $product->id);
 
         Toastr::success('Data Update Success');
         return redirect()->route('products.index');
@@ -115,8 +117,8 @@ class ProductController extends Controller
     {
         $product = Product::whereSlug($slug)->first();
 
-        if($product->product_image != '') {
-            $photo_location = 'uploads/products/'.$product->product_image;
+        if($product->product_image != '' && $product->product_image != 'default-product.jpg') {
+            $photo_location = 'public/uploads/products/'.$product->product_image;
             unlink(base_path($photo_location));
         }
 
@@ -152,7 +154,7 @@ class ProductController extends Controller
 
     public function multiple_image_upload($request, $product_id)
     {
-        if($request->file('product_multiple_image')) {
+        if($request->hasFile('product_multiple_image')) {
             $flag = 1;
 
             foreach($request->file('product_multiple_image') as $single_image) {
