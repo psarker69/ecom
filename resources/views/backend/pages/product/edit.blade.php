@@ -52,10 +52,10 @@
                             <!-- Product Name Section -->
                             <div class="col-12 mb-3">
                                 <label for="product-name" class="form-label">Product Name</label>
-                                <input type="text" name="name" value="{{ $product->name }}"
-                                    class="form-control @error('name') is-invalid @enderror"
+                                <input type="text" name="product_name" value="{{ $product->product_name }}"
+                                    class="form-control @error('product_name') is-invalid @enderror"
                                     placeholder="enter product name">
-                                @error('title')
+                                @error('product_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

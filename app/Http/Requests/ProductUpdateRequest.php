@@ -32,7 +32,6 @@ class ProductUpdateRequest extends FormRequest
             'long_description'=>'nullable|string',
             'additional_info'=>'nullable|string',
             'product_image'=>'nullable|image|max:1024',
-            'product_multiple_image'=>'nullable|image|max:1024'
         ];
     }
 }
