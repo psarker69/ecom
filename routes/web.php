@@ -19,7 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::prefix('')->group(function() {
+
+    Route::get('/', [HomeController::class, 'home'])->name('home');
+    Route::get('/shop', [HomeController::class, 'shopPage'])->name('shop.page');
+    Route::get('/single-product/{product_slug}', [HomeController::class, 'productDetails'])->name('productdetail.page');
+
+});
 
 
 // Route::get('/dashboard', function () {
